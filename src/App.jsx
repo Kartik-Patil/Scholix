@@ -162,11 +162,6 @@ export default function App() {
                     <li>Student leaderboard</li>
                     <li>Personalized learning paths</li>
                   </ul>
-                  <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
-                    <a href="https://cetup.in" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', color: 'var(--blue-bright)', textDecoration: 'none', fontWeight: '600', fontSize: '0.9rem', transition: 'opacity 0.2s' }} onMouseOver={e => e.currentTarget.style.opacity = 0.8} onMouseOut={e => e.currentTarget.style.opacity = 1}>
-                      Visit cetup.in <span style={{ fontSize: '1.2em' }}>→</span>
-                    </a>
-                  </div>
                 </div>
                 <div className="eco-card reveal reveal-delay-1">
                   <h2 style={{ marginBottom: '1rem' }}>EduPilot</h2>
@@ -350,6 +345,42 @@ export default function App() {
             </div>
           </section>
 
+          <section id="team" style={{ padding: '6rem 0' }}>
+            <div className="section-inner">
+              <div className="section-header" style={{ textAlign: 'center', marginBottom: '4rem' }}>
+                <span className="section-label reveal">Our People</span>
+                <h2 className="section-h2 reveal reveal-delay-1" style={{ margin: '0 auto' }}>Meet Our Team</h2>
+              </div>
+              <div className="team-grid reveal reveal-delay-2">
+                <div className="team-card">
+                  <img src="src\assests\Team\SB.png" alt="Team Member 1" className="team-avatar" />
+                  <h4 className="team-name">Saanjali Belgavi</h4>
+                  <p className="team-role">Chief Executive Officer</p>
+                </div>
+                <div className="team-card">
+                  <img src="src\assests\Team\KP.png" alt="Team Member 2" className="team-avatar" />
+                  <h4 className="team-name">Kartik Patil</h4>
+                  <p className="team-role">Chief Technology Officer</p>
+                </div>
+                <div className="team-card">
+                  <img src="src\assests\Team\MS.png" alt="Team Member 3" className="team-avatar" />
+                  <h4 className="team-name">Manjunath Subhedar</h4>
+                  <p className="team-role">Chief Operating Officer</p>
+                </div>
+                <div className="team-card">
+                  <img src="src\assests\Team\NN.png" alt="Team Member 4" className="team-avatar" />
+                  <h4 className="team-name">Nainavati Nashipudi</h4>
+                  <p className="team-role">Chief Product Officer</p>
+                </div>
+                <div className="team-card">
+                  <img src="src\assests\Team\RS.png" alt="Team Member 5" className="team-avatar" />
+                  <h4 className="team-name">Rohit Subhedar</h4>
+                  <p className="team-role">Senior Engineer</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
           <section id="contact">
             <div className="banner-glow"></div>
             <div className="banner-inner">
@@ -361,13 +392,14 @@ export default function App() {
                 <a href="mailto:contact@scholixmind.in" className="btn-primary" style={{ marginBottom: '100px' }}>
                   Get In Touch With Us
                 </a>
-                <a href="tel:+917676621233" className="btn-secondary" style={{ marginBottom: '100px' }}>
-                  <ul>
-                    <li>+91 7676621233</li>
-                    <li>+91 9113050680</li>
-                    <li>+91 9844320505</li>
-                  </ul>
-                </a>
+                <div className="btn-secondary" style={{ marginBottom: '100px', flexDirection: 'column', alignItems: 'flex-start', gap: '0.5rem', padding: '1.25rem 2rem', height: 'auto' }}>
+                  <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: '600' }}>Call Us</span>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
+                    <a href="tel:+917676621233" style={{ color: 'var(--text-secondary)', textDecoration: 'none', transition: 'color 0.2s' }} onMouseOver={e => e.target.style.color = '#fff'} onMouseOut={e => e.target.style.color = 'var(--text-secondary)'}>+91 7676621233</a>
+                    <a href="tel:+919113050680" style={{ color: 'var(--text-secondary)', textDecoration: 'none', transition: 'color 0.2s' }} onMouseOver={e => e.target.style.color = '#fff'} onMouseOut={e => e.target.style.color = 'var(--text-secondary)'}>+91 9113050680</a>
+                    <a href="tel:+919844320505" style={{ color: 'var(--text-secondary)', textDecoration: 'none', transition: 'color 0.2s' }} onMouseOver={e => e.target.style.color = '#fff'} onMouseOut={e => e.target.style.color = 'var(--text-secondary)'}>+91 9844320505</a>
+                  </div>
+                </div>
               </div>
             </div>
           </section>

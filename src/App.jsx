@@ -1,5 +1,8 @@
 import React, { useEffect, useRef } from 'react'
 import logo from './assests/SLiver-logo.png'
+import eduAttendLogo from './assests/EduAttend_logo.png'
+import eduPilotLogo from './assests/EduPilot_logo.png'
+import cetupLogo from './assests/CETup_logo.png'
 import Nav from './components/Nav'
 import Hero from './components/Hero'
 import Particles from './components/Particles'
@@ -20,7 +23,7 @@ function FixedCards() {
     function tickCards() {
       const trigger = document.getElementById('cards-trigger')
       if (!trigger) return
-      
+
       const rect = trigger.getBoundingClientRect()
       const triggerTop = rect.top + window.scrollY
       const triggerHeight = rect.height
@@ -29,18 +32,18 @@ function FixedCards() {
       const start = triggerTop - vh * 0.5
       const end = triggerTop + triggerHeight - vh * 0.3
       const range = end - start
-      
+
       let progress = range > 0 ? (scrollY - start) / range : 0
       progress = Math.max(0, Math.min(1, progress))
-      
+
       const isActive = scrollY >= start - vh * 0.2 && scrollY <= end + vh * 0.3
       const fadeIn = Math.min(1, Math.max(0, (scrollY - (start - vh * 0.2)) / (vh * 0.2)))
       const fadeOut = Math.min(1, Math.max(0, (end + vh * 0.3 - scrollY) / (vh * 0.3)))
       const containerOpacity = isActive ? Math.min(fadeIn, fadeOut) : 0
-      
+
       fixedCards.style.opacity = containerOpacity
       fixedCards.style.pointerEvents = containerOpacity > 0.1 ? 'auto' : 'none'
-      
+
       const isMobile = window.innerWidth < 768
       const revealPct = progress * 130
       if (isMobile) {
@@ -52,7 +55,7 @@ function FixedCards() {
       }
       rafId = requestAnimationFrame(tickCards)
     }
-    
+
     rafId = requestAnimationFrame(tickCards)
     return () => cancelAnimationFrame(rafId)
   }, [])
@@ -130,9 +133,9 @@ export default function App() {
           <section id="stats">
             <div className="section-inner">
               <div className="stats-grid" style={{ gridTemplateColumns: 'repeat(3, 1fr)' }}>
-                <CounterStat target={10} unit="K+" label="Students" />
-                <CounterStat target={100} unit="+" label="Institutions" delayClass="reveal-delay-1" />
-                <CounterStat target={1} unit="M+" label="Records" delayClass="reveal-delay-2" />
+                <CounterStat target={1000} unit="+" label="Students" />
+                <CounterStat target={10} unit="+" label="Institutions" delayClass="reveal-delay-1" />
+                <CounterStat target={45} unit="+" label="Active Modules" delayClass="reveal-delay-2" />
               </div>
             </div>
           </section>
@@ -141,27 +144,38 @@ export default function App() {
             <div className="section-inner">
               <div className="section-header">
                 <span className="section-label reveal">Products</span>
-                <h2 className="reveal reveal-delay-1">Intelligent Platforms</h2>
+                <h1 className="reveal reveal-delay-1">Intelligent Platforms</h1>
               </div>
               <div className="eco-grid" style={{ gridTemplateColumns: 'repeat(3, 1fr)', gap: '2rem' }}>
-                <div className="eco-card reveal">
-                  <h4>EduAttend</h4>
-                  <p>Smart Attendance & Academic Operations. Intelligent attendance tracking and academic engagement platform for schools and colleges.</p>
-                  <span className="eco-tag core">Operations</span>
-                  <ul style={{ marginTop: '1rem', paddingLeft: '1.2rem', color: 'var(--text-secondary)', fontSize: '0.8rem', lineHeight: '1.6' }}>
-                    <li>One-click attendance marking</li>
-                    <li>Smart parent alerts & notifications</li>
-                    <li>AI attendance analytics</li>
-                    <li>Multi-role dashboards</li>
-                    <li>Real-time reports & exports</li>
-                    <li>QR & biometric-ready</li>
+                <div className="eco-card reveal reveal-delay-2">
+                  <h2 style={{ marginBottom: '1rem' }}>CETup</h2>
+                  <p style={{ fontSize: '1rem', lineHeight: '1.6' }}>AI-Powered CET Preparation Platform. Smart preparation and performance platform for competitive exam aspirants.</p>
+                  <span className="eco-tag community">Exam Preparation</span>
+                  <div style={{ display: 'flex', justifyContent: 'center' }}>
+                    <img src={cetupLogo} alt="CETup Logo" style={{ height: '124px', width: 'auto', objectFit: 'contain', filter: 'grayscale(0) brightness(1.2)' }} />
+                  </div>
+                  <ul style={{ marginTop: '1rem', paddingLeft: '1.2rem', color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: '1.6' }}>
+                    <li>Mock CET/KCET/COMEDK examinations</li>
+                    <li>AI learning analytics</li>
+                    <li>Performance prediction</li>
+                    <li>Smart practice engine</li>
+                    <li>Student leaderboard</li>
+                    <li>Personalized learning paths</li>
                   </ul>
+                  <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
+                    <a href="https://cetup.in" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', color: 'var(--blue-bright)', textDecoration: 'none', fontWeight: '600', fontSize: '0.9rem', transition: 'opacity 0.2s' }} onMouseOver={e => e.currentTarget.style.opacity = 0.8} onMouseOut={e => e.currentTarget.style.opacity = 1}>
+                      Visit cetup.in <span style={{ fontSize: '1.2em' }}>→</span>
+                    </a>
+                  </div>
                 </div>
                 <div className="eco-card reveal reveal-delay-1">
-                  <h4>EduPilot</h4>
-                  <p>Modern College Management Platform. Complete academic management system for colleges with attendance, marks, and analytics.</p>
+                  <h2 style={{ marginBottom: '1rem' }}>EduPilot</h2>
+                  <p style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>Modern College Management Platform. Complete academic management system for colleges with attendance, marks, and analytics.</p>
                   <span className="eco-tag addon">ERP & Intelligence</span>
-                  <ul style={{ marginTop: '1rem', paddingLeft: '1.2rem', color: 'var(--text-secondary)', fontSize: '0.8rem', lineHeight: '1.6' }}>
+                  <div style={{ display: 'flex', justifyContent: 'center' }}>
+                    <img src={eduPilotLogo} alt="EduPilot Logo" style={{ height: '144px', width: 'auto', objectFit: 'contain', filter: 'grayscale(0) brightness(1.2)' }} />
+                  </div>
+                  <ul style={{ paddingLeft: '1.2rem', color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: '1.6' }}>
                     <li>Student & faculty management</li>
                     <li>Advanced academic analytics</li>
                     <li>Timetable & operations</li>
@@ -170,19 +184,24 @@ export default function App() {
                     <li>Smart institutional workflows</li>
                   </ul>
                 </div>
-                <div className="eco-card reveal reveal-delay-2">
-                  <h4>CETup</h4>
-                  <p>AI-Powered CET Preparation Platform. Smart preparation and performance platform for competitive exam aspirants.</p>
-                  <span className="eco-tag community">Exam Preparation</span>
-                  <ul style={{ marginTop: '1rem', paddingLeft: '1.2rem', color: 'var(--text-secondary)', fontSize: '0.8rem', lineHeight: '1.6' }}>
-                    <li>Mock CET/KCET/COMEDK examinations</li>
-                    <li>AI learning analytics</li>
-                    <li>Performance prediction</li>
-                    <li>Smart practice engine</li>
-                    <li>Student leaderboard</li>
-                    <li>Personalized learning paths</li>
+                <div className="eco-card reveal">
+                  <h2 style={{ marginBottom: '1rem' }}>EduAttend</h2>
+                  <p style={{ fontSize: '0.9rem', lineHeight: '1.6' }}>Smart Attendance & Academic Operations. Intelligent attendance tracking and academic engagement platform for schools and colleges.</p>
+                  <span className="eco-tag core">Operations</span>
+                  <div style={{ display: 'flex', justifyContent: 'center' }}>
+                    <img src={eduAttendLogo} alt="EduAttend Logo" style={{ height: '124px', width: 'auto', objectFit: 'contain', filter: 'grayscale(0) brightness(1.2)' }} />
+                  </div>
+                  <ul style={{ marginTop: '1rem', paddingLeft: '1.2rem', color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: '1.6' }}>
+                    <li>One-click attendance marking</li>
+                    <li>Smart parent alerts & notifications</li>
+                    <li>AI attendance analytics</li>
+                    <li>Multi-role dashboards</li>
+                    <li>Real-time reports & exports</li>
+
                   </ul>
                 </div>
+
+
               </div>
             </div>
           </section>
@@ -339,11 +358,15 @@ export default function App() {
                 Ready to revolutionize your institution? Get in touch with our team today.
               </p>
               <div className="cta-row reveal reveal-delay-2">
-                <a href="mailto:contact@scholixmind.in" className="btn-primary">
-                  contact@scholixmind.in
+                <a href="mailto:contact@scholixmind.in" className="btn-primary" style={{ marginBottom: '100px' }}>
+                  Get In Touch With Us
                 </a>
-                <a href="tel:+917676621233" className="btn-secondary">
-                  +91 7676621233
+                <a href="tel:+917676621233" className="btn-secondary" style={{ marginBottom: '100px' }}>
+                  <ul>
+                    <li>+91 7676621233</li>
+                    <li>+91 9113050680</li>
+                    <li>+91 9844320505</li>
+                  </ul>
                 </a>
               </div>
             </div>
@@ -380,7 +403,7 @@ export default function App() {
               <div className="footer-bottom">
                 <span className="footer-copy">© 2026 Scholix Mind. Built for the Indian education ecosystem.</span>
                 <div className="footer-social">
-                  <a href="#" aria-label="LinkedIn">
+                  <a href="https://www.linkedin.com/company/scholixmind-tech" aria-label="LinkedIn">
                     LinkedIn
                   </a>
                 </div>

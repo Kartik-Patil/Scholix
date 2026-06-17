@@ -33,22 +33,18 @@ export default function Hero() {
         </h1>
 
         <p className="hero-desc hero-animate delay-3">
-          AI-powered academic platforms designed for institutions, educators, and students.
-          Transform education with intelligent automation, analytics, and modern digital experiences.
+          Software built for modern education—helping institutions manage academics, engage students, and unlock actionable insights.
         </p>
 
         <div className="hero-ctas hero-animate delay-4">
           <a href="#products" className="cta-btn">
-            Explore Products
-            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-            </svg>
+            EXPERIENCE BUILDS
           </a>
 
-          <a href="#contact" className="cta-outline">Contact Us</a>
+          {/*<a href="#contact" className="cta-outline">Contact Us</a>*/}
         </div>
 
-        <div className="badge-row hero-animate delay-5">
+        {/*<div className="badge-row hero-animate delay-5">
           {[
             'AI-Powered',
             'Real-Time Analytics',
@@ -65,14 +61,9 @@ export default function Hero() {
               </span>
             </div>
           ))}
-        </div>
+        </div>*/}
       </div>
 
-      <div className="bounce-arrow">
-        <svg fill="none" viewBox="0 0 24 24" strokeWidth="1.75" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-        </svg>
-      </div>
     </section>
   )
 }

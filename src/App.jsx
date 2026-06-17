@@ -433,7 +433,7 @@ export default function App() {
                 </div>
               </div>
               <div className="footer-bottom">
-                <span className="footer-copy">© 2026 Scholix Mind. Built for the Indian education ecosystem.</span>
+                <span className="footer-copy">© 2026 ScholixMind Technologies Pvt Ltd. Built for the Indian education ecosystem.</span>
                 <div className="footer-social">
                   <a href="https://www.linkedin.com/company/scholixmind-tech" aria-label="LinkedIn">
                     LinkedIn

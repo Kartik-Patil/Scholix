@@ -8,6 +8,11 @@ import Hero from './components/Hero'
 import Particles from './components/Particles'
 import ScrollVideo from './components/ScrollVideo'
 import { useScrollReveal, useCounter } from './hooks/useScrollReveal'
+import kartikImg from '../src/assests/Team/KP.png'
+import saanjaliImg from '../src/assests/Team/SB.png'
+import manjunathImg from '../src/assests/Team/MS.png'
+import rohitImg from '../src/assests/Team/RS.png'
+import nainaImg from '../src/assests/Team/NN.png'
 
 
 
@@ -353,27 +358,27 @@ export default function App() {
               </div>
               <div className="team-grid reveal reveal-delay-2">
                 <div className="team-card">
-                  <img src="src\assests\Team\SB.png" alt="Team Member 1" className="team-avatar" />
+                  <img src={saanjaliImg} alt="Team Member 1" className="team-avatar" />
                   <h4 className="team-name">Saanjali Belgavi</h4>
                   <p className="team-role">Chief Executive Officer</p>
                 </div>
                 <div className="team-card">
-                  <img src="src\assests\Team\KP.png" alt="Team Member 2" className="team-avatar" />
+                  <img src={kartikImg} alt="Team Member 2" className="team-avatar" />
                   <h4 className="team-name">Kartik Patil</h4>
                   <p className="team-role">Chief Technology Officer</p>
                 </div>
                 <div className="team-card">
-                  <img src="src\assests\Team\MS.png" alt="Team Member 3" className="team-avatar" />
+                  <img src={manjunathImg} alt="Team Member 3" className="team-avatar" />
                   <h4 className="team-name">Manjunath Subhedar</h4>
                   <p className="team-role">Chief Operating Officer</p>
                 </div>
                 <div className="team-card">
-                  <img src="src\assests\Team\NN.png" alt="Team Member 4" className="team-avatar" />
+                  <img src={nainaImg} alt="Team Member 4" className="team-avatar" />
                   <h4 className="team-name">Nainavati Nashipudi</h4>
                   <p className="team-role">Chief Product Officer</p>
                 </div>
                 <div className="team-card">
-                  <img src="src\assests\Team\RS.png" alt="Team Member 5" className="team-avatar" />
+                  <img src={rohitImg} alt="Team Member 5" className="team-avatar" />
                   <h4 className="team-name">Rohit Subhedar</h4>
                   <p className="team-role">Senior Engineer</p>
                 </div>
